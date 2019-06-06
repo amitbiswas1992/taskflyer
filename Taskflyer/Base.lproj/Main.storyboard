@@ -32,11 +32,18 @@
                             <outlet property="delegate" destination="2ax-wW-7c2" id="X41-cf-V1Y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Task Flyer" id="ise-dB-Efa"/>
+                    <navigationItem key="navigationItem" title="Task Flyer" id="ise-dB-Efa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PCZ-4w-Qzw">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="2ax-wW-7c2" id="qwO-Se-dec"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCs-7T-ubw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586" y="81"/>
+            <point key="canvasLocation" x="494" y="81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AYy-tM-XWF">
