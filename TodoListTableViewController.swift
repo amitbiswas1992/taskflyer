@@ -31,5 +31,19 @@ let itemArray = ["Find Mike", "Buy Eggs", "TLC Papers Works" ]
         
     }
     
+    //MARK: Table View Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark{
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        }else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
+        
+         tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
     
 }
