@@ -13,12 +13,12 @@ var itemArray = [Item]()
     
     // User Defaults declaration
 //    let defaults = UserDefaults.standard
-    
+ let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+   
    
         let newItem = Item()
         newItem.title = "Find Mike"
@@ -32,9 +32,10 @@ var itemArray = [Item]()
         newItem3.title = "Eggs "
         itemArray.append(newItem3)
      
-        if let  items = defaults.array(forKey: "TodoListArray") as? [Item] {
-          itemArray = items
-        }
+//        if let  items = defaults.array(forKey: "TodoListArray") as? [Item] {
+//          itemArray = items
+//        }
+        
         
         
     }
@@ -92,6 +93,13 @@ var itemArray = [Item]()
             newItem.title = textField.text!
             self.itemArray.append(newItem)
 //            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+            let encoder = PropertyListEncoder()
+            do{
+            let data = try encoder.encode(self.itemArray)
+                try data.write(to: self.dataFilePath!)
+            } catch {
+                print("Error encoding item array \(error)")
+            }
             self.tableView.reloadData()
             
         }
