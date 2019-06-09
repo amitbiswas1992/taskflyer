@@ -12,11 +12,13 @@ class TodoListTableViewController: UITableViewController {
 var itemArray = [Item]()
     
     // User Defaults declaration
-    let defaults = UserDefaults.standard
+//    let defaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
    
         let newItem = Item()
         newItem.title = "Find Mike"
@@ -89,7 +91,7 @@ var itemArray = [Item]()
            let newItem = Item()
             newItem.title = textField.text!
             self.itemArray.append(newItem)
-            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+//            self.defaults.set(self.itemArray, forKey: "TodoListArray")
             self.tableView.reloadData()
             
         }
