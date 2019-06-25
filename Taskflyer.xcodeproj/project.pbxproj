@@ -12,7 +12,6 @@
 		5347C46022A86B9C009267CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5347C45F22A86B9C009267CA /* Assets.xcassets */; };
 		5347C46322A86B9C009267CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5347C46122A86B9C009267CA /* LaunchScreen.storyboard */; };
 		5347C46B22A8FB0A009267CA /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347C46A22A8FB0A009267CA /* TodoListTableViewController.swift */; };
-		535755FA22AB16B30025F418 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535755F922AB16B30025F418 /* Item.swift */; };
 		5378F9C722BDA97D00F60CD0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5378F9C522BDA97D00F60CD0 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		5347C46222A86B9C009267CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5347C46422A86B9C009267CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5347C46A22A8FB0A009267CA /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
-		535755F922AB16B30025F418 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5378F9C622BDA97D00F60CD0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,6 @@
 		535755FC22AB16DD0025F418 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				535755F922AB16B30025F418 /* Item.swift */,
 				5378F9C522BDA97D00F60CD0 /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
@@ -183,7 +180,6 @@
 			files = (
 				5347C45922A86B99009267CA /* AppDelegate.swift in Sources */,
 				5378F9C722BDA97D00F60CD0 /* DataModel.xcdatamodeld in Sources */,
-				535755FA22AB16B30025F418 /* Item.swift in Sources */,
 				5347C46B22A8FB0A009267CA /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
