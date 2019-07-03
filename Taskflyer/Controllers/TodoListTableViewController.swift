@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListTableViewController: UITableViewController {
 var itemArray = [Item]()
@@ -23,7 +24,7 @@ var itemArray = [Item]()
 //          itemArray = items
 //        }
         
-        loadItems()
+//        loadItems()
         
     }
  
@@ -76,7 +77,8 @@ var itemArray = [Item]()
         let alert = UIAlertController(title: "Add New Task Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             // What will happen when the user pressed the button and add item
-           let newItem = Item()
+      
+            let newItem = Item(context: self.context)
             newItem.title = textField.text!
             self.itemArray.append(newItem)
 //            self.defaults.set(self.itemArray, forKey: "TodoListArray")
@@ -97,19 +99,19 @@ var itemArray = [Item]()
     //MARK: save items method
     
     func saveItems(){
-        let encoder = PropertyListEncoder()
+        
         do{
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+          try context.save()
         } catch {
-            print("Error encoding item array \(error)")
+           print("Error \(error)")
         }
+        
         self.tableView.reloadData()
         
     }
     
     // MARK: load Item Method
-    
+
     func loadItems(){
         if  let data = try? Data(contentsOf: dataFilePath!) {
             let decoder = PropertyListDecoder()
@@ -117,13 +119,13 @@ var itemArray = [Item]()
                 itemArray = try decoder.decode([Item].self, from: data)
             }catch{
                 print("Errors ")
-                
+
             }
         }
-            
-            
+
+
         }
-        
+    
         
     }
     
